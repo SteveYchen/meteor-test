@@ -2,12 +2,27 @@
 
 //import React
 import React from 'react';
+import ImageDetail from './image_detail'
+
+//array dummydata
+const IMAGES = [
+	{ title: 'pen', link: 'https://dummyimage.com/600x400'},
+	{ title: 'Pine Tree', link: 'https://dummyimage.com/600x400'},
+	{ title: 'Mug', link: 'https://dummyimage.com/600x400'}
+];
 
 //Create our component
 const ImageList = () => {
+	//array of components
+	const RenderedImages = IMAGES.map(image => {
+		return <ImageDetail key={image.title} image2={image} />
+
+	});
+
+
 	return(
-		<ul>
-			<li>Image Detail</li>
+		<ul className="media-list list-group">
+			{RenderedImages}
 		</ul>
 	);
 
